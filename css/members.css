@@ -1,700 +1,238 @@
-      :root {
-        --primary-navy: #0d1140;
-        --secondary-navy: #171b47;
-        --accent-gold: #ffc107;
-        --accent-red: #dc3545;
-        --glass-bg: rgba(255, 255, 255, 0.9);
-        --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-        --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-      }
+/* ===================================
+   Members Page – Reference Design Match
+   borgaon.aaplipanchayat.com/members
+   =================================== */
 
-      body {
-        font-family: 'Mukta', sans-serif;
-        background-color: #f0f2f5;
-        color: #2d3436;
-      }
-
-      .section-title {
-        color: var(--primary-navy);
-        font-weight: 700;
-        position: relative;
-        padding-bottom: 15px;
-        margin-bottom: 40px;
-      }
-
-      .section-title::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 4px;
-        background: var(--accent-gold);
-        border-radius: 2px;
-      }
-
-      /* Premium Card Styling */
-      .member-card {
-        background: var(--glass-bg);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        border-radius: 20px;
-        overflow: hidden;
-        transition: var(--transition-smooth);
-        box-shadow: var(--glass-shadow);
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .member-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
-      }
-
-      .member-img-container {
-        position: relative;
-        width: 100%;
-        padding-top: 120%; /* Consistent aspect ratio */
-        overflow: hidden;
-      }
-
-      .member-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: var(--transition-smooth);
-      }
-
-      .member-card:hover .member-img {
-        transform: scale(1.08);
-      }
-
-      .member-info {
-        padding: 20px;
-        text-align: center;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .member-name {
-        font-size: 1.15rem;
-        font-weight: 700;
-        color: var(--primary-navy);
-        margin-bottom: 5px;
-      }
-
-      .member-role {
-        font-size: 0.9rem;
-        color: #636e72;
-        font-weight: 500;
-        margin-bottom: 15px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
-      .member-contact {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        padding: 8px 16px;
-        background: #fff;
-        border: 1px solid #eee;
-        border-radius: 50px;
-        color: var(--primary-navy);
-        text-decoration: none;
-        font-size: 0.9rem;
-        transition: var(--transition-smooth);
-      }
-
-      .member-contact:hover {
-        background: var(--primary-navy);
-        color: #fff;
-        border-color: var(--primary-navy);
-      }
-
-      /* Filters */
-      .filter-container {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin-bottom: 40px;
-        flex-wrap: wrap;
-      }
-
-      .filter-btn {
-        padding: 10px 24px;
-        border-radius: 50px;
-        border: 2px solid var(--primary-navy);
-        background: transparent;
-        color: var(--primary-navy);
-        font-weight: 600;
-        transition: var(--transition-smooth);
-        cursor: pointer;
-      }
-
-      .filter-btn.active, .filter-btn:hover {
-        background: var(--primary-navy);
-        color: #fff;
-      }
-
-      .card-header {
-        background-color: #171b47;
-        color: white;
-      }
-
-      /* Table styles */
-      .table-container {
-        overflow-x: auto;
-      }
-
-      .members-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 20px 0;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      }
-
-      .members-table th {
-        background-color: #171b47;
-        color: white;
-        padding: 12px 15px;
-        text-align: left;
-      }
-
-      .members-table td {
-        padding: 12px 15px;
-        border-bottom: 1px solid #ddd;
-      }
-
-      .members-table tr:nth-child(even) {
-        background-color: #f8f9fa;
-      }
-
-      .members-table tr:hover {
-        background-color: #e9ecef;
-      }
-
-      .table-section {
-        margin-bottom: 40px;
-      }
-
-      .table-title {
-        color: #171b47;
-        margin-bottom: 20px;
-        padding-bottom: 10px;
-        border-bottom: 2px solid #171b47;
-      }
-
-      .footer {
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: #ffffff;
-  padding: 60px 20px 20px;
-  font-family: "Mukta", sans-serif;
-  position: relative;
-  overflow: hidden;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-bottom: 200px;
+/* --- Page Background --- */
+.members-section {
+  background: #f0f4f8; /* specific light grey-blue background from reference */
+  padding: 40px 0 60px;
+  min-height: 80vh;
 }
 
-.footer::before {
+/* --- Section Title --- */
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1e3a8a;
+  margin-bottom: 30px;
+}
+
+/* --- Filter Buttons --- */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  padding: 10px 24px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #1e3a8a;
+  color: #ffffff;
+  border-color: #1e3a8a;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
+}
+
+/* --- Member Card Grid --- */
+#membersGrid {
+  /* Using CSS grid directly inside the row */
+  /* Bootstrap handles row g-4, so we adapt columns */
+}
+
+/* --- Member Card (The Main Container) --- */
+.member-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #f3f4f6;
+  overflow: hidden; /* To ensure the before element is clipped */
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Tri-Color Top Bar --- */
+.member-card::before {
   content: '';
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,111,97,0.15) 0%, transparent 70%);
-  transform: rotate(45deg);
-  pointer-events: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  /* Green -> Yellow -> Blue */
+  background: linear-gradient(90deg, #16a34a 0%, #16a34a 33%, #fbbf24 33%, #fbbf24 66%, #2563eb 66%, #2563eb 100%);
+  z-index: 10;
 }
 
-.footer h5 {
-  font-size: 18px;
-  margin-bottom: 15px;
-  font-weight: 700;
-  position: relative;
+/* --- Image Container (Perfect Portrait) --- */
+.member-img-container {
+  background: #f3f4f6;
+  border-radius: 8px;
+  width: 100%;
+  aspect-ratio: 4 / 5; /* Professional portrait aspect ratio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
-.footer h5::after {
-  content: '';
-  width: 50px;
-  height: 2px;
-  background: #ff6f61;
-  display: block;
-  margin-top: 5px;
-  transition: width 0.3s;
+.member-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top; /* Better for profile headshots */
 }
 
-.footer h5:hover::after {
-  width: 100px; /* Animated underline */
+/* On mobile, maintain the aspect ratio instead of using fixed height */
+@media (max-width: 576px) {
+  .member-img-container {
+    height: auto; /* Allow aspect-ratio to dictate height */
+    margin-top: 6px;
+    margin-bottom: 15px;
+  }
 }
 
-/* Footer links */
-.footer p, .footer a {
-  color: #fff;
-  font-size: 14px;
-  line-height: 1.6;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-
-.footer a:hover {
-  color: #ff6f61;
-  transform: translateX(5px);
-}
-
-.footer .quick-links a {
-  display: block;
-  margin-bottom: 8px;
-  transition: all 0.3s;
-}
-
-.footer .quick-links a:hover {
-  padding-left: 10px;
-  color: #ff6f61;
-}
-
-/* Contact info */
-.footer .contact-info i {
-  margin-right: 10px;
-  color: #ff6f61;
-  transition: transform 0.3s;
-}
-
-.footer .contact-info i:hover {
-  transform: scale(1.2);
-}
-
-/* Social icons */
-.footer .social-icons {
-  margin-top: 20px;
-}
-
-.footer .social-icons a {
-  display: inline-block;
-  margin-right: 15px;
-  color: white;
-  font-size: 18px;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  border-radius: 50%;
-  background-color: rgba(255,255,255,0.1);
-  transition: all 0.3s;
-}
-
-.footer .social-icons a:hover {
-  background-color: #ff6f61;
-  color: #fff;
-  transform: scale(1.2);
-}
-
-/* Footer bottom */
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.2);
-  padding: 15px 0;
+/* --- Member Info Block --- */
+.member-info {
   text-align: center;
-  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1; /* Pushes contact info to bottom */
 }
 
-.footer-bottom a {
-  color: #ff6f61;
-  font-weight: 500;
-  transition: all 0.3s;
+/* --- Name (Bold, Dark Blue) --- */
+.member-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1e3a8a; /* deep blue */
+  margin: 0 0 12px 0;
+  line-height: 1.3;
 }
 
-.footer-bottom a:hover {
+/* --- Role Badge (Indigo Pill) --- */
+.member-role {
+  display: inline-block;
+  background-color: #f5f3ff;
+  color: #5b21b6;
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  border: 1px solid #ddd6fe;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  white-space: nowrap;
+}
+
+/* --- Contact Link (Phone) --- */
+.member-contact {
+  margin-top: auto; /* Force to bottom of card info area */
+  color: #1d4ed8;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-bottom: 10px;
+}
+
+.member-contact i {
+  color: #16a34a; /* success green */
+  font-size: 1.1rem;
+}
+
+.member-contact:hover {
+  color: #1e3a8a;
   text-decoration: underline;
 }
 
-/* Footer grid */
-.footer .row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+/* --- Animation items --- */
+.member-item {
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.footer .col {
-  flex: 1 1 200px;
-  margin-bottom: 20px;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .member-name {
+    font-size: 1.05rem;
+  }
+  .member-role {
+    font-size: 0.85rem;
+    padding: 5px 14px;
+  }
+  .member-contact {
+    font-size: 0.9rem;
+  }
+  .member-contact i {
+    font-size: 1rem;
+  }
 }
 
-      .quick-links a {
-        color: white;
-        text-decoration: none;
-        display: block;
-        margin-bottom: 10px;
-      }
-
-      .quick-links a:hover {
-        text-decoration: underline;
-      }
-
-      .contact-info i {
-        margin-right: 10px;
-        width: 20px;
-      }
-
-      .copyright {
-        background-color: #171b47;
-        color: white;
-        padding: 10px 0;
-        text-align: center;
-      }
-
-      .notification {
-        background-color: #fff8e1;
-        border-left: 4px solid #ffc107;
-        padding: 15px;
-        margin: 20px 0;
-      }
-      .red-icon {
-        color: red;     
-        font-size: 15px; 
+@media (max-width: 576px) {
+  .filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 25px;
+  }
+  .filter-btn {
+    padding: 6px 14px;
+    font-size: 0.82rem;
+  }
+  .member-card {
+    padding: 8px;
+    border-radius: 8px;
+  }
+  .member-name {
+    font-size: 0.82rem;
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+  .member-role {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+    margin-bottom: 8px;
+  }
+  .member-img-container {
+    margin-bottom: 10px;
+    border-radius: 6px;
+  }
+  .member-contact {
+    font-size: 0.75rem;
+    gap: 4px;
+    padding-bottom: 4px;
+  }
+  .member-contact i {
+    font-size: 0.8rem;
+  }
 }
-      .marquee {
-        background-color: #181b3a;
-        color: white;
-        padding: 10px;
-        overflow: hidden;
-      }
-
-      .gallery-card {
-        overflow: hidden;
-        cursor: pointer;
-      }
-      .hover-caption {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        color: white;
-        text-align: center;
-        padding: 5px 0;
-        opacity: 0;
-        transition: 0.3s;
-        font-size: 14px;
-      }
-      .gallery-card:hover .hover-caption {
-        opacity: 1;
-      }
-      .gallery-img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        transition: transform 0.3s;
-        border-radius: 5px;
-      }
-      .gallery-card:hover .gallery-img {
-        transform: scale(1.05);
-      }
-      .officer-img {
-        width: 220px;
-        height: 290px;
-        object-fit: contain;
-        border-radius: 10%;
-        border: 2px solid #ddd;
-      }
-      .icon-carousel {
-        overflow: hidden;
-        width: 100%;
-        background-color: #f9f9f9;
-        padding: 10px 0;
-        border-radius: 8px;
-      }
-
-      .icon-track {
-        display: flex;
-        gap: 50px;
-        width: max-content;
-        animation: scroll 20s linear infinite;
-      }
-
-      .carousel-icon {
-        height: 60px;
-        width: 60px;
-        flex-shrink: 0;
-      }
-      .fixed-img {
-        height: 250px;
-        object-fit: cover;
-        width: 100%;
-      }
-
-      @keyframes scroll {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-50%);
-        }
-      }
-
-      /* Improved carousel animation */
-      .carousel-item {
-        transition: transform 1.2s ease-in-out;
-      }
-
-      /* Language translator */
-      .google-translator {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        z-index: 1000;
-      }
-
-      /* GIGW compliance */
-      .gigw-compliance {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 1000;
-        background-color: #0d1140;
-        color: white;
-        padding: 10px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      }
-
-      /* Counter animation */
-      .counter {
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: #171b47;
-      }
-
-      /* Visitor counter */
-      .visitor-count {
-        display: inline-block;
-        background-color: rgba(255, 255, 255, 0.2);
-        padding: 2px 8px;
-        border-radius: 4px;
-        margin-left: 10px;
-      }
-
-      /* Accessibility Panel */
-      .accessibility-panel {
-        position: fixed;
-        bottom: 70px;
-        right: 20px;
-        background-color: #0d1140;
-        color: white;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        z-index: 999;
-        display: none;
-      }
-
-      .accessibility-panel button {
-        display: block;
-        width: 100%;
-        margin-bottom: 10px;
-        background-color: white;
-        color: #0d1140;
-        border: none;
-        padding: 8px 12px;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: all 0.3s;
-      }
-
-      .accessibility-panel button:hover {
-        background-color: #e9ecef;
-      }
-
-      /* Dark mode */
-      body.dark-mode {
-        background-color: #222;
-        color: #f8f9fa;
-      }
-
-      body.dark-mode .card {
-        background-color: #333;
-        color: #f8f9fa;
-      }
-
-      body.dark-mode .card-header {
-        background-color: #2c3380;
-      }
-
-      body.dark-mode .section-title {
-        color: #aab3ff;
-        border-bottom: 2px solid #aab3ff;
-      }
-
-      body.dark-mode .notification {
-        background-color: #444;
-        color: #f8f9fa;
-      }
-
-      /* Text size adjustments */
-      body.text-large {
-        font-size: 1.2rem;
-      }
-
-      body.text-xlarge {
-        font-size: 1.4rem;
-      }
-
-      body.text-small {
-        font-size: 0.9rem;
-      }
-      /* Dropdown Menu Styles */
-      .dropdown-menu-custom {
-        background-color: #0d1140;
-        border: none;
-        border-radius: 0;
-        padding: 0;
-      }
-
-      .dropdown-item-custom {
-        color: white !important;
-        padding: 12px 20px;
-        border-bottom: 1px solid #2a3173;
-      }
-
-      .dropdown-item-custom:hover {
-        background-color: #171b47 !important;
-        color: white !important;
-      }
-
-      .nav-item.dropdown:hover .dropdown-menu {
-        display: block;
-        margin-top: 0;
-      }
-
-      .dropdown-toggle::after {
-        margin-left: 5px;
-      }
-
-      /* For mobile view */
-      @media (max-width: 991px) {
-        .dropdown-menu {
-          position: static;
-          float: none;
-          width: auto;
-          margin-top: 0;
-          background-color: transparent;
-          border: 0;
-          box-shadow: none;
-        }
-
-        .dropdown-item-custom {
-          padding-left: 40px;
-        }
-      }
-
-      /* Tax Collection Styles */
-      .word-rotator {
-        position: relative;
-        display: inline-block;
-        text-align: center;
-      }
-
-      .word-rotator-words {
-        position: relative;
-        overflow: hidden;
-        display: inline-block;
-        height: 1.2em;
-        vertical-align: bottom;
-        color: white;
-        padding: 0 5px;
-        border-radius: 4px;
-      }
-
-      .word-rotator-words b {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        opacity: 0;
-        white-space: nowrap;
-        transition: opacity 0.5s ease-in-out;
-      }
-
-      .word-rotator-words b.is-visible {
-        opacity: 1;
-        position: relative;
-      }
-
-      .tax-message {
-        background-color: #e8f5e9;
-        padding: 20px;
-        border-radius: 8px;
-        margin: 30px 0;
-        text-align: center;
-        border-left: 4px solid #4caf50;
-      }
-
-      .collapse-section {
-        margin-bottom: 20px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        overflow: hidden;
-      }
-
-      .collapse-header {
-        background-color: #0d1140;
-        color: white;
-        padding: 15px 20px;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-weight: 600;
-        font-size: 1.1rem;
-      }
-
-      .collapse-header:hover {
-        background-color: #171b47;
-      }
-
-      .collapse-content {
-        background-color: white;
-        padding: 20px;
-        border-left: 4px solid #0d1140;
-      }
-
-      .coming-soon {
-        text-align: center;
-        padding: 30px;
-        color: #6c757d;
-        font-style: italic;
-      }
-
-      .payment-methods {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin-top: 20px;
-      }
-
-      .payment-method {
-        text-align: center;
-        padding: 15px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        width: 120px;
-        transition: all 0.3s;
-      }
-
-      .payment-method:hover {
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        transform: translateY(-5px);
-      }
-
-      .payment-method i {
-        font-size: 2rem;
-        margin-bottom: 10px;
-        color: #0d1140;
-      }
