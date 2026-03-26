@@ -665,7 +665,160 @@
         <div class="text-center mt-3">
           <button class="btn btn-primary" id="seeMoreBtn">See More</button>
         </div>
+
+        <!-- Document Showcase Section (PPT & PDF) -->
+        <h3 class="section-title mt-5">दस्तऐवज आणि सादरीकरण</h3>
+        <div class="row g-3 mt-2" id="documentGrid">
+          <!-- PPT Document Card -->
+          <div class="col-6 col-md-4">
+            <div class="card h-100 shadow-sm border-warning">
+              <div class="card-header bg-warning text-dark text-center p-2">
+                <h6 class="mb-0 small fw-bold"><i class="fas fa-file-powerpoint"></i> PPT Presentation</h6>
+              </div>
+              <div class="card-body p-0 d-flex align-items-center justify-content-center bg-light" style="height: 160px; position: relative;">
+                <div class="text-center">
+                  <i class="fas fa-file-powerpoint fa-3x text-warning mb-2"></i>
+                </div>
+                <!-- Clickable overlay to open modal -->
+                <div 
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer; background: rgba(0,0,0,0.02);" 
+                  data-bs-toggle="modal" 
+                  data-bs-target="#pptModal"
+                ></div>
+              </div>
+              <div class="card-footer bg-light text-center p-2">
+                <button class="btn btn-sm btn-outline-warning text-dark w-100 fw-bold" data-bs-toggle="modal" data-bs-target="#pptModal">
+                  <i class="fas fa-eye"></i> Preview
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PDF Document Card 1 -->
+          <div class="col-6 col-md-4">
+            <div class="card h-100 shadow-sm border-danger">
+              <div class="card-header bg-danger text-white text-center p-2">
+                <h6 class="mb-0 small fw-bold"><i class="fas fa-file-pdf"></i> Important PDF 1</h6>
+              </div>
+              <div class="card-body p-0" style="height: 160px; overflow: hidden; position: relative;">
+                <iframe src="pdf/123.pdf" width="100%" height="200px" style="border: none; pointer-events: none; margin-top: -20px;"></iframe>
+                <div 
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer; background: rgba(0,0,0,0.05);" 
+                  data-bs-toggle="modal" 
+                  data-bs-target="#pdfModal"
+                ></div>
+              </div>
+              <div class="card-footer bg-light text-center p-2">
+                <button class="btn btn-sm btn-outline-danger w-100 fw-bold" data-bs-toggle="modal" data-bs-target="#pdfModal">
+                  <i class="fas fa-eye"></i> Preview
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PDF Document Card 2 (New Placeholder) -->
+          <div class="col-6 col-md-4">
+            <div class="card h-100 shadow-sm border-danger">
+              <div class="card-header bg-danger text-white text-center p-2">
+                <h6 class="mb-0 small fw-bold"><i class="fas fa-file-pdf"></i> Important PDF 2</h6>
+              </div>
+              <div class="card-body p-0 d-flex align-items-center justify-content-center bg-light" style="height: 160px; position: relative;">
+                 <i class="fas fa-file-pdf fa-3x text-danger opacity-50"></i>
+                <div 
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer;" 
+                  data-bs-toggle="modal" 
+                  data-bs-target="#pdfModal"
+                ></div>
+              </div>
+              <div class="card-footer bg-light text-center p-2">
+                <button class="btn btn-sm btn-outline-danger w-100 fw-bold" data-bs-toggle="modal" data-bs-target="#pdfModal">
+                  <i class="fas fa-eye"></i> Preview
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hidden Additional Documents Row -->
+        <div class="row g-3 mt-1 d-none" id="moreDocuments">
+           <!-- PDF Document Card 3 -->
+           <div class="col-6 col-md-4">
+            <div class="card h-100 shadow-sm border-danger">
+              <div class="card-header bg-danger text-white text-center p-2">
+                <h6 class="mb-0 small fw-bold"><i class="fas fa-file-pdf"></i> Important PDF 3</h6>
+              </div>
+              <div class="card-body p-0 d-flex align-items-center justify-content-center bg-light" style="height: 160px; position: relative;">
+                 <i class="fas fa-file-pdf fa-3x text-danger opacity-50"></i>
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#pdfModal"></div>
+              </div>
+              <div class="card-footer bg-light text-center p-2">
+                <button class="btn btn-sm btn-outline-danger w-100 fw-bold" data-bs-toggle="modal" data-bs-target="#pdfModal">Preview</button>
+              </div>
+            </div>
+          </div>
+          <!-- PDF Document Card 4 -->
+          <div class="col-6 col-md-4">
+            <div class="card h-100 shadow-sm border-danger">
+              <div class="card-header bg-danger text-white text-center p-2">
+                <h6 class="mb-0 small fw-bold"><i class="fas fa-file-pdf"></i> Important PDF 4</h6>
+              </div>
+              <div class="card-body p-0 d-flex align-items-center justify-content-center bg-light" style="height: 160px; position: relative;">
+                 <i class="fas fa-file-pdf fa-3x text-danger opacity-50"></i>
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#pdfModal"></div>
+              </div>
+              <div class="card-footer bg-light text-center p-2">
+                <button class="btn btn-sm btn-outline-danger w-100 fw-bold" data-bs-toggle="modal" data-bs-target="#pdfModal">Preview</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- See More Documents Button -->
+        <div class="text-center mt-3 mb-5">
+          <button class="btn btn-outline-primary" id="seeMoreDocsBtn">See More Documents</button>
+        </div>
       </div>
+
+      <!-- PPT Modal -->
+      <div class="modal fade" id="pptModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"><i class="fas fa-file-powerpoint text-warning"></i> Presentation Viewer</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0" style="height: 85vh; position: relative;">
+              <!-- Microsoft Office Online Viewer (Requires Public URL) -->
+              <iframe 
+                src="https://drive.google.com/file/d/1WY-2uRnKDOMuZDw5X5ip0CU1eZuj0tpZ/view?usp=sharing" 
+                width="100%" 
+                height="100%" 
+                style="border: none;"
+              ></iframe>
+              <!-- Local Testing Disclaimer -->
+              <div class="position-absolute bottom-0 start-0 w-100 bg-dark text-white p-2 small text-center opacity-75">
+                Note: Preview requires a public URL. It may take same time
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PDF Modal -->
+      <div class="modal fade" id="pdfModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"><i class="fas fa-file-pdf text-danger"></i> PDF Document Viewer</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0" style="height: 85vh;">
+              <iframe src="pdf/123.pdf" width="100%" height="100%" style="border: none;"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content position-relative p-0">
@@ -907,22 +1060,24 @@
           });
         });
 
-        // ---------------- See More Button ----------------
-        const seeMoreBtn = document.getElementById("seeMoreBtn");
-        const moreImages = document.getElementById("moreImages");
+        // ---------------- See More Documents Button ----------------
+        const seeMoreDocsBtn = document.getElementById("seeMoreDocsBtn");
+        const moreDocuments = document.getElementById("moreDocuments");
 
-        if (seeMoreBtn && moreImages) {
-          seeMoreBtn.addEventListener("click", () => {
-            if (moreImages.classList.contains("d-none")) {
-              moreImages.classList.remove("d-none");
-              seeMoreBtn.innerText = "See Less";
+        if (seeMoreDocsBtn && moreDocuments) {
+          seeMoreDocsBtn.addEventListener("click", () => {
+            if (moreDocuments.classList.contains("d-none")) {
+              moreDocuments.classList.remove("d-none");
+              seeMoreDocsBtn.innerText = "See Less Documents";
             } else {
-              moreImages.classList.add("d-none");
-              seeMoreBtn.innerText = "See More";
+              moreDocuments.classList.add("d-none");
+              seeMoreDocsBtn.innerText = "See More Documents";
             }
           });
         }
       });
+
+
 
       // ---------------- Accessibility Panel ----------------
       const gigwButton = document.getElementById("gigwButton");
